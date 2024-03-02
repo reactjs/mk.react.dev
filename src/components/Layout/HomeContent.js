@@ -124,7 +124,7 @@ export function HomeContent() {
             React
           </h1>
           <p className="text-4xl font-display max-w-lg md:max-w-full py-1 text-center text-secondary dark:text-primary-dark leading-snug self-center">
-            The library for web and native user interfaces
+            Библиотеката за веб и домашни кориснички интерфејси
           </p>
           <div className="mt-5 self-center flex gap-2 w-full sm:w-auto flex-col sm:flex-row">
             <ButtonLink
@@ -132,29 +132,29 @@ export function HomeContent() {
               type="primary"
               size="lg"
               className="w-full sm:w-auto justify-center"
-              label="Learn React">
-              Learn React
+              label="Научете React">
+              Научете React
             </ButtonLink>
             <ButtonLink
               href={'/reference/react'}
               type="secondary"
               size="lg"
               className="w-full sm:w-auto justify-center"
-              label="API Reference">
-              API Reference
+              label="API Референца">
+              API Референца
             </ButtonLink>
           </div>
         </div>
 
         <Section background="left-card">
           <Center>
-            <Header>Create user interfaces from components</Header>
+            <Header>Креирајте кориснички интерфејси од компоненти</Header>
             <Para>
-              React lets you build user interfaces out of individual pieces
-              called components. Create your own React components like{' '}
-              <Code>Thumbnail</Code>, <Code>LikeButton</Code>, and{' '}
-              <Code>Video</Code>. Then combine them into entire screens, pages,
-              and apps.
+              React ви овозможува да изградите кориснички интерфејси од
+              поединечни делови наречени компоненти. Создадете свои компоненти
+              React како <Code>Thumbnail</Code>, <Code>LikeButton</Code> и{' '}
+              <Code>Video</Code>. Потоа комбинирајте ги во цели екрани,
+              страници, и апликации.
             </Para>
           </Center>
           <FullBleed>
@@ -162,10 +162,10 @@ export function HomeContent() {
           </FullBleed>
           <Center>
             <Para>
-              Whether you work on your own or with thousands of other
-              developers, using React feels the same. It is designed to let you
-              seamlessly combine components written by independent people,
-              teams, and organizations.
+              Без разлика дали работите сами или со илјадници други
+              програмерите, користењето на React се чувствува исто. Дизајниран е
+              за да ви дозволи беспрекорно комбинирање на компоненти напишани од
+              независни луѓе, тимови и организации.
             </Para>
           </Center>
         </Section>

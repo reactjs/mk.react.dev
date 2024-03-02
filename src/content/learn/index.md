@@ -1,21 +1,21 @@
 ---
-title: Quick Start
+title: Брз почеток
 ---
 
 <Intro>
 
-Welcome to the React documentation! This page will give you an introduction to the 80% of React concepts that you will use on a daily basis.
+Добредојдовте во документацијата React! Оваа страница ќе ве водеде во 80% од концептите на React што ќе ги користите секојдневно.
 
 </Intro>
 
 <YouWillLearn>
 
-- How to create and nest components
-- How to add markup and styles
-- How to display data
-- How to render conditions and lists
-- How to respond to events and update the screen
-- How to share data between components
+- Како да креирате и вгнездувате компоненти
+- Како да додадете обележување(markup) и стилови
+- Како да се прикажат податоци
+- Како да рендерирате услови и списоци
+- Како да одговорите на настани и да го ажурирате екранот
+- Како да споделувате податоци помеѓу компонентите
 
 </YouWillLearn>
 
@@ -28,27 +28,27 @@ React components are JavaScript functions that return markup:
 ```js
 function MyButton() {
   return (
-    <button>I'm a button</button>
+    <button>Јас сум копче</button>
   );
 }
 ```
 
-Now that you've declared `MyButton`, you can nest it into another component:
+Сегашто "MyButton" е прогласен, можете да го вгнездите во друга компонента:
 
 ```js {5}
 export default function MyApp() {
   return (
     <div>
-      <h1>Welcome to my app</h1>
+      <h1>Добредојдовте во мојата апликација</h1>
       <MyButton />
     </div>
   );
 }
 ```
 
-Notice that `<MyButton />` starts with a capital letter. That's how you know it's a React component. React component names must always start with a capital letter, while HTML tags must be lowercase.
+Забележете дека `<MyButton />` започнува со голема буква. Така знаете дека тоа е React компонента. Имињата на React компонентите секогаш мора да започнуваат со голема буква, додека HTML ознаките мора да бидат мали.
 
-Have a look at the result:
+Погледнете го резултатот:
 
 <Sandpack>
 
@@ -56,7 +56,7 @@ Have a look at the result:
 function MyButton() {
   return (
     <button>
-      I'm a button
+      Јас сум копче
     </button>
   );
 }
@@ -64,7 +64,7 @@ function MyButton() {
 export default function MyApp() {
   return (
     <div>
-      <h1>Welcome to my app</h1>
+      <h1>Добредојдовте во мојата апликација</h1>
       <MyButton />
     </div>
   );
@@ -73,7 +73,7 @@ export default function MyApp() {
 
 </Sandpack>
 
-The `export default` keywords specify the main component in the file. If you're not familiar with some piece of JavaScript syntax, [MDN](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export) and [javascript.info](https://javascript.info/import-export) have great references.
+Клучните зборови "export default" ја одредуваат главната компонента во фајлот. Ако не сте запознаени со некои делови од синтаксата на JavaScript, [MDN](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export) и [javascript.info](https://javascript.info/import-export) имаат одлични референци.
 
 ## Writing markup with JSX {/*writing-markup-with-jsx*/}
 
