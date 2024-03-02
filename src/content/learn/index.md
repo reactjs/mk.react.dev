@@ -113,9 +113,9 @@ If you have a lot of HTML to port to JSX, you can use an [online converter.](htt
 
 React не пропишува како да додавате CSS фајлови. Во наједноставниот случај, ќе додадете [`<link>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link) ознака во вашиот HTML. Ако користите алатка за градење или оквир, консултирајте се со документацијата за да научите како да додадете CSS фајлови во вашиот проект.
 
-## Displaying data {/*displaying-data*/}
+## Прикажување податоци {/*displaying-data*/}
 
-JSX lets you put markup into JavaScript. Curly braces let you "escape back" into JavaScript so that you can embed some variable from your code and display it to the user. For example, this will display `user.name`:
+JSX ви овозможува да ставите ознаки во JavaScript. Кадравите загради ви дозволуваат "да избегате назад" во JavaScript за да можете да вградите некоја варијабила од вашиот код и да ја прикажете на корисникот. На пример, ова ќе прикаже `user.name`:
 
 ```js {3}
 return (
@@ -125,7 +125,7 @@ return (
 );
 ```
 
-You can also "escape into JavaScript" from JSX attributes, but you have to use curly braces *instead of* quotes. For example, `className="avatar"` passes the `"avatar"` string as the CSS class, but `src={user.imageUrl}` reads the JavaScript `user.imageUrl` variable value, and then passes that value as the `src` attribute:
+Можете исто така да "избегате во JavaScript" од JSX атрибутите, но мора да користите кадрави загради *наместо* наводници. На пример, `className="avatar"` ја пренесува низата `"avatar"` како CSS класа, но `src={user.imageUrl}` ја чита вредноста на JavaScript варијабилата `user.imageUrl` и потоа ја пренесува таа вредност како атрибутот `src`:
 
 ```js {3,4}
 return (
@@ -136,7 +136,7 @@ return (
 );
 ```
 
-You can put more complex expressions inside the JSX curly braces too, for example, [string concatenation](https://javascript.info/operators#string-concatenation-with-binary):
+Можете исто така да ставите посложени изрази во JSX кадравите загради, на пример, [спојување низи](https://javascript.info/operators#string-concatenation-with-binary):
 
 <Sandpack>
 
@@ -154,7 +154,7 @@ export default function Profile() {
       <img
         className="avatar"
         src={user.imageUrl}
-        alt={'Photo of ' + user.name}
+        alt={'Слика на ' + user.name}
         style={{
           width: user.imageSize,
           height: user.imageSize
@@ -177,7 +177,7 @@ export default function Profile() {
 
 </Sandpack>
 
-In the above example, `style={{}}` is not a special syntax, but a regular `{}` object inside the `style={ }` JSX curly braces. You can use the `style` attribute when your styles depend on JavaScript variables.
+Во горниот пример, `style={{}}` не е специјална синтакса, туку обичен објект `{}` во `style={ }` JSX кадравите заградите. Можете да го користите атрибутот "style" кога вашите стилови зависат од JavaScript варијабилите.
 
 ## Conditional rendering {/*conditional-rendering*/}
 
