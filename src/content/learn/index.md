@@ -94,24 +94,24 @@ function AboutPage() {
 
 If you have a lot of HTML to port to JSX, you can use an [online converter.](https://transform.tools/html-to-jsx)
 
-## Adding styles {/*adding-styles*/}
+## Додавање стилови {/*adding-styles*/}
 
-In React, you specify a CSS class with `className`. It works the same way as the HTML [`class`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class) attribute:
+Во React, одредувате CSS класа со `className`. Работи на истиот начин како HTML атрибутот [`class`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class):
 
 ```js
 <img className="avatar" />
 ```
 
-Then you write the CSS rules for it in a separate CSS file:
+Потоа ги пишувате CSS правилата за него во посебен CSS фајл:
 
 ```css
-/* In your CSS */
+/* Во вашиот CSS */
 .avatar {
   border-radius: 50%;
 }
 ```
 
-React does not prescribe how you add CSS files. In the simplest case, you'll add a [`<link>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link) tag to your HTML. If you use a build tool or a framework, consult its documentation to learn how to add a CSS file to your project.
+React не пропишува како да додавате CSS фајлови. Во наједноставниот случај, ќе додадете [`<link>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link) ознака во вашиот HTML. Ако користите алатка за градење или оквир, консултирајте се со документацијата за да научите како да додадете CSS фајлови во вашиот проект.
 
 ## Displaying data {/*displaying-data*/}
 
