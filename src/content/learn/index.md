@@ -1,21 +1,21 @@
 ---
-title: Quick Start
+title: Брз почеток
 ---
 
 <Intro>
 
-Welcome to the React documentation! This page will give you an introduction to the 80% of React concepts that you will use on a daily basis.
+Добредојдовте во документацијата React! Оваа страница ќе ве водеде во 80% од концептите на React што ќе ги користите секојдневно.
 
 </Intro>
 
 <YouWillLearn>
 
-- How to create and nest components
-- How to add markup and styles
-- How to display data
-- How to render conditions and lists
-- How to respond to events and update the screen
-- How to share data between components
+- Како да креирате и вгнездувате компоненти
+- Како да додадете обележување(markup) и стилови
+- Како да се прикажат податоци
+- Како да рендерирате услови и списоци
+- Како да одговорите на настани и да го ажурирате екранот
+- Како да споделувате податоци помеѓу компонентите
 
 </YouWillLearn>
 
@@ -28,27 +28,27 @@ React components are JavaScript functions that return markup:
 ```js
 function MyButton() {
   return (
-    <button>I'm a button</button>
+    <button>Јас сум копче</button>
   );
 }
 ```
 
-Now that you've declared `MyButton`, you can nest it into another component:
+Сегашто "MyButton" е прогласен, можете да го вгнездите во друга компонента:
 
 ```js {5}
 export default function MyApp() {
   return (
     <div>
-      <h1>Welcome to my app</h1>
+      <h1>Добредојдовте во мојата апликација</h1>
       <MyButton />
     </div>
   );
 }
 ```
 
-Notice that `<MyButton />` starts with a capital letter. That's how you know it's a React component. React component names must always start with a capital letter, while HTML tags must be lowercase.
+Забележете дека `<MyButton />` започнува со голема буква. Така знаете дека тоа е React компонента. Имињата на React компонентите секогаш мора да започнуваат со голема буква, додека HTML ознаките мора да бидат мали.
 
-Have a look at the result:
+Погледнете го резултатот:
 
 <Sandpack>
 
@@ -56,7 +56,7 @@ Have a look at the result:
 function MyButton() {
   return (
     <button>
-      I'm a button
+      Јас сум копче
     </button>
   );
 }
@@ -64,7 +64,7 @@ function MyButton() {
 export default function MyApp() {
   return (
     <div>
-      <h1>Welcome to my app</h1>
+      <h1>Добредојдовте во мојата апликација</h1>
       <MyButton />
     </div>
   );
@@ -73,7 +73,7 @@ export default function MyApp() {
 
 </Sandpack>
 
-The `export default` keywords specify the main component in the file. If you're not familiar with some piece of JavaScript syntax, [MDN](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export) and [javascript.info](https://javascript.info/import-export) have great references.
+Клучните зборови "export default" ја одредуваат главната компонента во фајлот. Ако не сте запознаени со некои делови од синтаксата на JavaScript, [MDN](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export) и [javascript.info](https://javascript.info/import-export) имаат одлични референци.
 
 ## Writing markup with JSX {/*writing-markup-with-jsx*/}
 
@@ -94,28 +94,28 @@ function AboutPage() {
 
 If you have a lot of HTML to port to JSX, you can use an [online converter.](https://transform.tools/html-to-jsx)
 
-## Adding styles {/*adding-styles*/}
+## Додавање стилови {/*adding-styles*/}
 
-In React, you specify a CSS class with `className`. It works the same way as the HTML [`class`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class) attribute:
+Во React, одредувате CSS класа со `className`. Работи на истиот начин како HTML атрибутот [`class`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class):
 
 ```js
 <img className="avatar" />
 ```
 
-Then you write the CSS rules for it in a separate CSS file:
+Потоа ги пишувате CSS правилата за него во посебен CSS фајл:
 
 ```css
-/* In your CSS */
+/* Во вашиот CSS */
 .avatar {
   border-radius: 50%;
 }
 ```
 
-React does not prescribe how you add CSS files. In the simplest case, you'll add a [`<link>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link) tag to your HTML. If you use a build tool or a framework, consult its documentation to learn how to add a CSS file to your project.
+React не пропишува како да додавате CSS фајлови. Во наједноставниот случај, ќе додадете [`<link>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link) ознака во вашиот HTML. Ако користите алатка за градење или оквир, консултирајте се со документацијата за да научите како да додадете CSS фајлови во вашиот проект.
 
-## Displaying data {/*displaying-data*/}
+## Прикажување податоци {/*displaying-data*/}
 
-JSX lets you put markup into JavaScript. Curly braces let you "escape back" into JavaScript so that you can embed some variable from your code and display it to the user. For example, this will display `user.name`:
+JSX ви овозможува да ставите ознаки во JavaScript. Кадравите загради ви дозволуваат "да избегате назад" во JavaScript за да можете да вградите некоја варијабила од вашиот код и да ја прикажете на корисникот. На пример, ова ќе прикаже `user.name`:
 
 ```js {3}
 return (
@@ -125,7 +125,7 @@ return (
 );
 ```
 
-You can also "escape into JavaScript" from JSX attributes, but you have to use curly braces *instead of* quotes. For example, `className="avatar"` passes the `"avatar"` string as the CSS class, but `src={user.imageUrl}` reads the JavaScript `user.imageUrl` variable value, and then passes that value as the `src` attribute:
+Можете исто така да "избегате во JavaScript" од JSX атрибутите, но мора да користите кадрави загради *наместо* наводници. На пример, `className="avatar"` ја пренесува низата `"avatar"` како CSS класа, но `src={user.imageUrl}` ја чита вредноста на JavaScript варијабилата `user.imageUrl` и потоа ја пренесува таа вредност како атрибутот `src`:
 
 ```js {3,4}
 return (
@@ -136,7 +136,7 @@ return (
 );
 ```
 
-You can put more complex expressions inside the JSX curly braces too, for example, [string concatenation](https://javascript.info/operators#string-concatenation-with-binary):
+Можете исто така да ставите посложени изрази во JSX кадравите загради, на пример, [спојување низи](https://javascript.info/operators#string-concatenation-with-binary):
 
 <Sandpack>
 
@@ -154,7 +154,7 @@ export default function Profile() {
       <img
         className="avatar"
         src={user.imageUrl}
-        alt={'Photo of ' + user.name}
+        alt={'Слика на ' + user.name}
         style={{
           width: user.imageSize,
           height: user.imageSize
@@ -177,7 +177,7 @@ export default function Profile() {
 
 </Sandpack>
 
-In the above example, `style={{}}` is not a special syntax, but a regular `{}` object inside the `style={ }` JSX curly braces. You can use the `style` attribute when your styles depend on JavaScript variables.
+Во горниот пример, `style={{}}` не е специјална синтакса, туку обичен објект `{}` во `style={ }` JSX кадравите заградите. Можете да го користите атрибутот "style" кога вашите стилови зависат од JavaScript варијабилите.
 
 ## Conditional rendering {/*conditional-rendering*/}
 
