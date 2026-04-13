@@ -4,26 +4,26 @@ title: Брз почеток
 
 <Intro>
 
-Добредојдовте во документацијата React! Оваа страница ќе ве водеде во 80% од концептите на React што ќе ги користите секојдневно.
+Добредојдовте во документацијата за React! Оваа страница ви дава вовед во 80% од концептите на React што ќе ги користите секојдневно.
 
 </Intro>
 
 <YouWillLearn>
 
-- Како да креирате и вгнездувате компоненти
-- Како да додадете обележување(markup) и стилови
-- Како да се прикажат податоци
+- Како да создавате и вгнездувате компоненти
+- Како да додадете обележување (markup) и стилови
+- Како да прикажувате податоци
 - Како да рендерирате услови и списоци
-- Како да одговорите на настани и да го ажурирате екранот
-- Како да споделувате податоци помеѓу компонентите
+- Како да одговарате на настани и да го ажурирате екранот
+- Како да споделувате податоци помеѓу компоненти
 
 </YouWillLearn>
 
-## Creating and nesting components {/*components*/}
+## Создавање и вгнездување на компоненти {/*components*/}
 
-React apps are made out of *components*. A component is a piece of the UI (user interface) that has its own logic and appearance. A component can be as small as a button, or as large as an entire page.
+React апликациите се изградени од *компоненти*. Компонентата е дел од корисничкиот интерфејс (UI) што има сопствена логика и изглед. Може да биде мала како копче или голема како цела страница.
 
-React components are JavaScript functions that return markup:
+React компонентите се JavaScript функции што враќаат обележување:
 
 ```js
 function MyButton() {
@@ -33,7 +33,7 @@ function MyButton() {
 }
 ```
 
-Сегашто "MyButton" е прогласен, можете да го вгнездите во друга компонента:
+Откако ќе ја декларирате `MyButton`, можете да ја вгнездите во друга компонента:
 
 ```js {5}
 export default function MyApp() {
@@ -46,7 +46,7 @@ export default function MyApp() {
 }
 ```
 
-Забележете дека `<MyButton />` започнува со голема буква. Така знаете дека тоа е React компонента. Имињата на React компонентите секогаш мора да започнуваат со голема буква, додека HTML ознаките мора да бидат мали.
+Забележете дека `<MyButton />` започнува со голема буква. Така знаете дека е React компонента. Имињата на React компонентите секогаш мора да започнуваат со голема буква, додека HTML ознаките мора да бидат со мали букви.
 
 Погледнете го резултатот:
 
@@ -73,36 +73,36 @@ export default function MyApp() {
 
 </Sandpack>
 
-Клучните зборови "export default" ја одредуваат главната компонента во фајлот. Ако не сте запознаени со некои делови од синтаксата на JavaScript, [MDN](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export) и [javascript.info](https://javascript.info/import-export) имаат одлични референци.
+Клучните зборови `export default` ја одредуваат главната компонента во фајлот. Ако не сте запознаени со дел од синтаксата на JavaScript, [MDN](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export) и [javascript.info](https://javascript.info/import-export) имаат одлични референци.
 
-## Writing markup with JSX {/*writing-markup-with-jsx*/}
+## Пишување обележување со JSX {/*writing-markup-with-jsx*/}
 
-The markup syntax you've seen above is called *JSX*. It is optional, but most React projects use JSX for its convenience. All of the [tools we recommend for local development](/learn/installation) support JSX out of the box.
+Синтаксата за обележување што ја видовте погоре се вика *JSX*. Не е задолжителна, но повеќето React проекти користат JSX заради погодноста. Сите [алатки што ги препорачуваме за локален развој](/learn/installation) поддржуваат JSX веднаш.
 
-JSX is stricter than HTML. You have to close tags like `<br />`. Your component also can't return multiple JSX tags. You have to wrap them into a shared parent, like a `<div>...</div>` or an empty `<>...</>` wrapper:
+JSX е построг од HTML. Мора да ги затворите ознаките како `<br />`. Компонентата не може да врати повеќе JSX ознаки истовремено. Треба да ги ставите во заеднички родител, како `<div>...</div>` или празна `<>...</>` обвивка (фрагмент):
 
 ```js {3,6}
 function AboutPage() {
   return (
     <>
-      <h1>About</h1>
-      <p>Hello there.<br />How do you do?</p>
+      <h1>За нас</h1>
+      <p>Здраво.<br />Како сте?</p>
     </>
   );
 }
 ```
 
-If you have a lot of HTML to port to JSX, you can use an [online converter.](https://transform.tools/html-to-jsx)
+Ако имате многу HTML што треба да го пренесете во JSX, може да користите [онлајн конвертор.](https://transform.tools/html-to-jsx)
 
 ## Додавање стилови {/*adding-styles*/}
 
-Во React, одредувате CSS класа со `className`. Работи на истиот начин како HTML атрибутот [`class`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class):
+Во React, CSS класата ја одредувате со `className`. Работи на истиот начин како HTML атрибутот [`class`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class):
 
 ```js
 <img className="avatar" />
 ```
 
-Потоа ги пишувате CSS правилата за него во посебен CSS фајл:
+Потоа ги пишувате CSS правилата за неа во посебен CSS фајл:
 
 ```css
 /* Во вашиот CSS */
@@ -111,11 +111,11 @@ If you have a lot of HTML to port to JSX, you can use an [online converter.](htt
 }
 ```
 
-React не пропишува како да додавате CSS фајлови. Во наједноставниот случај, ќе додадете [`<link>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link) ознака во вашиот HTML. Ако користите алатка за градење или оквир, консултирајте се со документацијата за да научите како да додадете CSS фајлови во вашиот проект.
+React не пропишува како да додавате CSS фајлови. Во наједноставниот случај, ќе додадете [`<link>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link) ознака во вашиот HTML. Ако користите алатка за градење или оквир, консултирајте се со документацијата за да научите како да додадете CSS фајл во проектот.
 
 ## Прикажување податоци {/*displaying-data*/}
 
-JSX ви овозможува да ставите ознаки во JavaScript. Кадравите загради ви дозволуваат "да избегате назад" во JavaScript за да можете да вградите некоја варијабила од вашиот код и да ја прикажете на корисникот. На пример, ова ќе прикаже `user.name`:
+JSX ви овозможува да ставите обележување во JavaScript. Кадравите загради ви дозволуваат повторно да „влезете“ во JavaScript за да вградите променлива од вашиот код и да ја прикажете на корисникот. На пример, ова ќе прикаже `user.name`:
 
 ```js {3}
 return (
@@ -125,7 +125,7 @@ return (
 );
 ```
 
-Можете исто така да "избегате во JavaScript" од JSX атрибутите, но мора да користите кадрави загради *наместо* наводници. На пример, `className="avatar"` ја пренесува низата `"avatar"` како CSS класа, но `src={user.imageUrl}` ја чита вредноста на JavaScript варијабилата `user.imageUrl` и потоа ја пренесува таа вредност како атрибутот `src`:
+Можете исто така да „избегате“ во JavaScript од JSX атрибутите, но мора да користите кадрави загради *наместо* наводници. На пример, `className="avatar"` ја пренесува низата `"avatar"` како CSS класа, но `src={user.imageUrl}` ја чита вредноста на JavaScript променливата `user.imageUrl` и потоа ја пренесува како атрибут `src`:
 
 ```js {3,4}
 return (
@@ -136,7 +136,7 @@ return (
 );
 ```
 
-Можете исто така да ставите посложени изрази во JSX кадравите загради, на пример, [спојување низи](https://javascript.info/operators#string-concatenation-with-binary):
+Можете да ставите и посложени изрази во JSX кадравите загради, на пример [спојување низи](https://javascript.info/operators#string-concatenation-with-binary):
 
 <Sandpack>
 
@@ -177,11 +177,11 @@ export default function Profile() {
 
 </Sandpack>
 
-Во горниот пример, `style={{}}` не е специјална синтакса, туку обичен објект `{}` во `style={ }` JSX кадравите заградите. Можете да го користите атрибутот "style" кога вашите стилови зависат од JavaScript варијабилите.
+Во горниот пример, `style={{}}` не е посебна синтакса, туку обичен објект `{}` внатре во `style={ }` во JSX кадравите загради. Можете да го користите атрибутот `style` кога вашите стилови зависат од JavaScript променливи.
 
-## Conditional rendering {/*conditional-rendering*/}
+## Условен приказ {/*conditional-rendering*/}
 
-In React, there is no special syntax for writing conditions. Instead, you'll use the same techniques as you use when writing regular JavaScript code. For example, you can use an [`if`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) statement to conditionally include JSX:
+Во React нема посебна синтакса за пишување услови. Наместо тоа, ќе ги користите истите техники како при обичен JavaScript. На пример, може да користите наредба [`if`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) за условно вклучување на JSX:
 
 ```js
 let content;
@@ -197,7 +197,7 @@ return (
 );
 ```
 
-If you prefer more compact code, you can use the [conditional `?` operator.](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) Unlike `if`, it works inside JSX:
+Ако претпочитате покомпактен код, може да го користите [условниот оператор `?`.](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) За разлика од `if`, работи и внатре во JSX:
 
 ```js
 <div>
@@ -209,7 +209,7 @@ If you prefer more compact code, you can use the [conditional `?` operator.](htt
 </div>
 ```
 
-When you don't need the `else` branch, you can also use a shorter [logical `&&` syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND#short-circuit_evaluation):
+Кога не ви треба гранката `else`, може да користите пократка [логичка синтакса со `&&`.](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND#short-circuit_evaluation)
 
 ```js
 <div>
@@ -217,13 +217,13 @@ When you don't need the `else` branch, you can also use a shorter [logical `&&` 
 </div>
 ```
 
-All of these approaches also work for conditionally specifying attributes. If you're unfamiliar with some of this JavaScript syntax, you can start by always using `if...else`.
+Сите овие пристапи важат и за условно задавање на атрибути. Ако некои од овие JavaScript конструкции не ви се познати, почнете со тоа секогаш да користите `if...else`.
 
-## Rendering lists {/*rendering-lists*/}
+## Прикажување на списоци {/*rendering-lists*/}
 
-You will rely on JavaScript features like [`for` loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) and the [array `map()` function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) to render lists of components.
+Ќе се потпрете на можностите на JavaScript како [`for` јамката](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) и [функцијата `map()` на низи](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) за да рендерирате списоци од компоненти.
 
-For example, let's say you have an array of products:
+На пример, да речеме дека имате низа производи:
 
 ```js
 const products = [
@@ -233,7 +233,7 @@ const products = [
 ];
 ```
 
-Inside your component, use the `map()` function to transform an array of products into an array of `<li>` items:
+Внатре во компонентата, користете ја функцијата `map()` за да ја претворите низата производи во низа `<li>` елементи:
 
 ```js
 const listItems = products.map(product =>
@@ -247,7 +247,7 @@ return (
 );
 ```
 
-Notice how `<li>` has a `key` attribute. For each item in a list, you should pass a string or a number that uniquely identifies that item among its siblings. Usually, a key should be coming from your data, such as a database ID. React uses your keys to know what happened if you later insert, delete, or reorder the items.
+Забележете дека `<li>` има атрибут `key`. За секој елемент во списокот треба да пренесете низа или број што единствено го одредува тој елемент меѓу „браќата“ во дрвото. Обично, клучот доаѓа од вашите податоци, на пример од ID во база. React ги користи клучевите за да знае што се случило ако подоцна вметнете, избришете или прередите елементи.
 
 <Sandpack>
 
@@ -278,37 +278,37 @@ export default function ShoppingList() {
 
 </Sandpack>
 
-## Responding to events {/*responding-to-events*/}
+## Одговарање на настани {/*responding-to-events*/}
 
-You can respond to events by declaring *event handler* functions inside your components:
+Можете да одговарате на настани со декларирање на функции за *ракување со настани* внатре во вашите компоненти:
 
 ```js {2-4,7}
 function MyButton() {
   function handleClick() {
-    alert('You clicked me!');
+    alert('Ме кликнавте!');
   }
 
   return (
     <button onClick={handleClick}>
-      Click me
+      Кликни ме
     </button>
   );
 }
 ```
 
-Notice how `onClick={handleClick}` has no parentheses at the end! Do not _call_ the event handler function: you only need to *pass it down*. React will call your event handler when the user clicks the button.
+Забележете дека `onClick={handleClick}` нема загради на крајот! Не ја *повикувајте* функцијата за ракување со настан: доволно е да ја *пренесете*. React ќе ја повика таа функција кога корисникот ќе го кликне копчето.
 
-## Updating the screen {/*updating-the-screen*/}
+## Ажурирање на екранот {/*updating-the-screen*/}
 
-Often, you'll want your component to "remember" some information and display it. For example, maybe you want to count the number of times a button is clicked. To do this, add *state* to your component.
+Често ќе сакате компонентата да „запомни“ некоја информација и да ја прикаже. На пример, можеби сакате да броите колку пати е кликнато копче. За тоа додадете *состојба (state)* во компонентата.
 
-First, import [`useState`](/reference/react/useState) from React:
+Прво, увезете [`useState`](/reference/react/useState) од React:
 
 ```js
 import { useState } from 'react';
 ```
 
-Now you can declare a *state variable* inside your component:
+Потоа може да декларирате *променлива за состојба* внатре во компонентата:
 
 ```js
 function MyButton() {
@@ -316,9 +316,9 @@ function MyButton() {
   // ...
 ```
 
-You’ll get two things from `useState`: the current state (`count`), and the function that lets you update it (`setCount`). You can give them any names, but the convention is to write `[something, setSomething]`.
+Од `useState` добивате две работи: моменталната состојба (`count`) и функцијата што ја ажурира (`setCount`). Можете да им дадете било кои имиња, но конвенцијата е `[нешто, setНешто]`.
 
-The first time the button is displayed, `count` will be `0` because you passed `0` to `useState()`. When you want to change state, call `setCount()` and pass the new value to it. Clicking this button will increment the counter:
+Првиот пат кога копчето се прикажува, `count` ќе биде `0` затоа што на `useState()` му пренесовте `0`. Кога сакате да ја смените состојбата, повикајте `setCount()` и пренесете ја новата вредност. Кликот на ова копче ќе го зголеми бројачот:
 
 ```js {5}
 function MyButton() {
@@ -330,15 +330,15 @@ function MyButton() {
 
   return (
     <button onClick={handleClick}>
-      Clicked {count} times
+      Кликнато {count} пати
     </button>
   );
 }
 ```
 
-React will call your component function again. This time, `count` will be `1`. Then it will be `2`. And so on.
+React повторно ќе ја повика вашата функција за компонента. Овој пат, `count` ќе биде `1`. Потоа `2`. И така натаму.
 
-If you render the same component multiple times, each will get its own state. Click each button separately:
+Ако ја рендерирате истата компонента повеќе пати, секоја добива сопствена состојба. Кликнете го секое копче посебно:
 
 <Sandpack>
 
@@ -348,7 +348,7 @@ import { useState } from 'react';
 export default function MyApp() {
   return (
     <div>
-      <h1>Counters that update separately</h1>
+      <h1>Бројачи што се ажурираат одделно</h1>
       <MyButton />
       <MyButton />
     </div>
@@ -364,7 +364,7 @@ function MyButton() {
 
   return (
     <button onClick={handleClick}>
-      Clicked {count} times
+      Кликнато {count} пати
     </button>
   );
 }
@@ -379,59 +379,59 @@ button {
 
 </Sandpack>
 
-Notice how each button "remembers" its own `count` state and doesn't affect other buttons.
+Забележете како секое копче „си ја памети“ сопствената состојба `count` и не влијае на другите копчиња.
 
-## Using Hooks {/*using-hooks*/}
+## Користење на Hooks {/*using-hooks*/}
 
-Functions starting with `use` are called *Hooks*. `useState` is a built-in Hook provided by React. You can find other built-in Hooks in the [API reference.](/reference/react) You can also write your own Hooks by combining the existing ones.
+Функциите што започнуваат со `use` се викаат *Hooks*. `useState` е вграден Hook што го нуди React. Други вградени Hooks ги наоѓате во [API референцата.](/reference/react) Можете и сами да пишете Hooks со комбинирање на постоечките.
 
-Hooks are more restrictive than other functions. You can only call Hooks *at the top* of your components (or other Hooks). If you want to use `useState` in a condition or a loop, extract a new component and put it there.
+Hooks се построги од другите функции. Можете да ги повикувате само *на врвот* на вашите компоненти (или на други Hooks). Ако сакате `useState` во услов или јамка, издвојте нова компонента и ставете го таму.
 
-## Sharing data between components {/*sharing-data-between-components*/}
+## Споделување податоци помеѓу компоненти {/*sharing-data-between-components*/}
 
-In the previous example, each `MyButton` had its own independent `count`, and when each button was clicked, only the `count` for the button clicked changed:
+Во претходниот пример, секое `MyButton` имаше сопствен независен `count`, и при клик само `count` на тоа копче се менуваше:
 
 <DiagramGroup>
 
-<Diagram name="sharing_data_child" height={367} width={407} alt="Diagram showing a tree of three components, one parent labeled MyApp and two children labeled MyButton. Both MyButton components contain a count with value zero.">
+<Diagram name="sharing_data_child" height={367} width={407} alt="Диаграм со дрво од три компоненти: родител MyApp и две деца MyButton. И двете MyButton имаат бројач со вредност нула.">
 
-Initially, each `MyButton`'s `count` state is `0`
+На почетокот, состојбата `count` на секое `MyButton` е `0`
 
 </Diagram>
 
-<Diagram name="sharing_data_child_clicked" height={367} width={407} alt="The same diagram as the previous, with the count of the first child MyButton component highlighted indicating a click with the count value incremented to one. The second MyButton component still contains value zero." >
+<Diagram name="sharing_data_child_clicked" height={367} width={407} alt="Истиот диаграм како претходниот: бројачот на првото дете MyButton е истакнат по клик и е зголемен на еден. Второто MyButton уште е нула." >
 
-The first `MyButton` updates its `count` to `1`
+Првото `MyButton` го ажурира својот `count` на `1`
 
 </Diagram>
 
 </DiagramGroup>
 
-However, often you'll need components to *share data and always update together*.
+Но, често ви треба компонентите да *ги споделуваат податоците и секогаш да се ажурираат заедно*.
 
-To make both `MyButton` components display the same `count` and update together, you need to move the state from the individual buttons "upwards" to the closest component containing all of them.
+За двете `MyButton` да прикажуваат ист `count` и да се ажурираат заедно, треба да ја „подигнете“ состојбата од поединечните копчиња до најблиската компонента што ги содржи сите.
 
-In this example, it is `MyApp`:
+Во овој пример, тоа е `MyApp`:
 
 <DiagramGroup>
 
-<Diagram name="sharing_data_parent" height={385} width={410} alt="Diagram showing a tree of three components, one parent labeled MyApp and two children labeled MyButton. MyApp contains a count value of zero which is passed down to both of the MyButton components, which also show value zero." >
+<Diagram name="sharing_data_parent" height={385} width={410} alt="Диаграм: родител MyApp и две деца MyButton. MyApp има count нула пренесена надолу кон двете MyButton, кои исто така покажуваат нула." >
 
-Initially, `MyApp`'s `count` state is `0` and is passed down to both children
+На почетокот, состојбата `count` на `MyApp` е `0` и се пренесува кон двете деца
 
 </Diagram>
 
-<Diagram name="sharing_data_parent_clicked" height={385} width={410} alt="The same diagram as the previous, with the count of the parent MyApp component highlighted indicating a click with the value incremented to one. The flow to both of the children MyButton components is also highlighted, and the count value in each child is set to one indicating the value was passed down." >
+<Diagram name="sharing_data_parent_clicked" height={385} width={410} alt="Истиот диаграм: count на родителот MyApp е истакнат по клик и е еден. Протокот кон двете MyButton е истакнат; и двете деца покажуваат еден." >
 
-On click, `MyApp` updates its `count` state to `1` and passes it down to both children
+По клик, `MyApp` ја ажурира состојбата `count` на `1` и ја пренесува надолу кон двете деца
 
 </Diagram>
 
 </DiagramGroup>
 
-Now when you click either button, the `count` in `MyApp` will change, which will change both of the counts in `MyButton`. Here's how you can express this in code.
+Сега, кога ќе кликнете било кое копче, `count` во `MyApp` ќе се смени, што ќе ги смени и двата броја во `MyButton`. Еве како да го изразите тоа во код.
 
-First, *move the state up* from `MyButton` into `MyApp`:
+Прво, *подигнете ја состојбата* од `MyButton` во `MyApp`:
 
 ```js {2-6,18}
 export default function MyApp() {
@@ -443,7 +443,7 @@ export default function MyApp() {
 
   return (
     <div>
-      <h1>Counters that update separately</h1>
+      <h1>Бројачи што се ажурираат одделно</h1>
       <MyButton />
       <MyButton />
     </div>
@@ -451,12 +451,12 @@ export default function MyApp() {
 }
 
 function MyButton() {
-  // ... we're moving code from here ...
+  // ... го преместуваме кодот оттука ...
 }
 
 ```
 
-Then, *pass the state down* from `MyApp` to each `MyButton`, together with the shared click handler. You can pass information to `MyButton` using the JSX curly braces, just like you previously did with built-in tags like `<img>`:
+Потоа, *пренесете ја состојбата надолу* од `MyApp` кон секое `MyButton`, заедно со заедничкиот ракувач за клик. Информацијата до `MyButton` ја пренесувате со JSX кадрави загради, како што претходно правевте со вградени ознаки како `<img>`:
 
 ```js {11-12}
 export default function MyApp() {
@@ -468,7 +468,7 @@ export default function MyApp() {
 
   return (
     <div>
-      <h1>Counters that update together</h1>
+      <h1>Бројачи што се ажурираат заедно</h1>
       <MyButton count={count} onClick={handleClick} />
       <MyButton count={count} onClick={handleClick} />
     </div>
@@ -476,21 +476,21 @@ export default function MyApp() {
 }
 ```
 
-The information you pass down like this is called _props_. Now the `MyApp` component contains the `count` state and the `handleClick` event handler, and *passes both of them down as props* to each of the buttons.
+Информацијата што вака ја пренесувате се вика _props_. Сега компонентата `MyApp` ја содржи состојбата `count` и ракувачот `handleClick`, и *ги пренесува двете како props* до секое копче.
 
-Finally, change `MyButton` to *read* the props you have passed from its parent component:
+На крај, сменете го `MyButton` за да ги *чита* props што ги пратил родителот:
 
 ```js {1,3}
 function MyButton({ count, onClick }) {
   return (
     <button onClick={onClick}>
-      Clicked {count} times
+      Кликнато {count} пати
     </button>
   );
 }
 ```
 
-When you click the button, the `onClick` handler fires. Each button's `onClick` prop was set to the `handleClick` function inside `MyApp`, so the code inside of it runs. That code calls `setCount(count + 1)`, incrementing the `count` state variable. The new `count` value is passed as a prop to each button, so they all show the new value. This is called "lifting state up". By moving state up, you've shared it between components.
+Кога кликнувате, се активира ракувачот `onClick`. На секое копче, prop-от `onClick` беше поставен на `handleClick` од `MyApp`, па се извршува тој код. Тој код повикува `setCount(count + 1)`, што ја зголемува променливата за состојба `count`. Новата вредност на `count` се пренесува како prop до секое копче, па сите ја покажуваат новата вредност. Ова се вика „подигнување на состојба“ (*lifting state up*). Со подигнување на состојбата, ја споделивте меѓу компонентите.
 
 <Sandpack>
 
@@ -506,7 +506,7 @@ export default function MyApp() {
 
   return (
     <div>
-      <h1>Counters that update together</h1>
+      <h1>Бројачи што се ажурираат заедно</h1>
       <MyButton count={count} onClick={handleClick} />
       <MyButton count={count} onClick={handleClick} />
     </div>
@@ -516,7 +516,7 @@ export default function MyApp() {
 function MyButton({ count, onClick }) {
   return (
     <button onClick={onClick}>
-      Clicked {count} times
+      Кликнато {count} пати
     </button>
   );
 }
@@ -531,8 +531,8 @@ button {
 
 </Sandpack>
 
-## Next Steps {/*next-steps*/}
+## Следни чекори {/*next-steps*/}
 
-By now, you know the basics of how to write React code!
+Досега ги знаете основите на пишување React код!
 
-Check out the [Tutorial](/learn/tutorial-tic-tac-toe) to put them into practice and build your first mini-app with React.
+Погледнете го [туторијалот](/learn/tutorial-tic-tac-toe) за да ги ставите во пракса и да ја изградите вашата прва мини-апликација со React.
