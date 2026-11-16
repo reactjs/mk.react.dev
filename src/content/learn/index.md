@@ -336,7 +336,11 @@ function MyButton() {
 }
 ```
 
+<<<<<<< HEAD
 React повторно ќе ја повика вашата функција за компонента. Овој пат, `count` ќе биде `1`. Потоа `2`. И така натаму.
+=======
+Calling `setCount` tells React to call your component function again. This is called a *re-render*. This time, `count` will be `1`. Then it will be `2`. And so on.
+>>>>>>> 46a54e0592729712b7640308b53268e84fdc7c9f
 
 Ако ја рендерирате истата компонента повеќе пати, секоја добива сопствена состојба. Кликнете го секое копче посебно:
 
